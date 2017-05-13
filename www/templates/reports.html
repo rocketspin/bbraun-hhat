@@ -1,0 +1,68 @@
+<ion-view view-title="{{ 'S1' | translate }}" class="reports" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/home"></a>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-balanced bar-subheader item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="{{ 'S2' | translate }}..." ng-model="searchText">
+        </label>
+        <button class="button button-clear" ng-click="searchText = ''">{{ 'S3' | translate }}</button>
+	</ion-header-bar>
+    
+    <ion-header-bar class="bar bar-subheader report-sub-header bar-sub-subheader">
+        <div class="column">
+        	<button class="button button-outline button-balanced icon ion-ios-calendar-outline pull-right" ng-click="filterReport();">&nbsp; {{ 'S4' | translate }}</button>
+        </div>
+        <div class="column">
+			<button class="button button-outline button-balanced icon ion-ios-email-outline pull-right" ng-click="emailReport();">&nbsp; {{ 'S5' | translate }}</button>
+        </div>
+	</ion-header-bar>
+    
+    <ion-content class="has-sub-subheader">
+        <div class="alert info filtered-date">
+        	{{ 'S6' | translate }} 
+            <span ng-if="!filteredNote">{{ 'S7' | translate }}</span>
+            <span ng-if="filteredNote">{{filteredNote}}</span>
+        </div>
+        <div class="alert info icon" ng-if="!networkState">{{ 'S9' | translate }}.</div>
+        <ion-list class="list reports animated bounceInLeft">
+
+            <!-- <div class="hcwSummaryTotal" ng-if="observations.length">
+                <div class="hcwSummaryTotalTitle">{{ 'ADD20' | translate }}</div>
+                <div class="hcwSummaryTotalCount">{{reportTotal}}</div>
+            </div> -->
+            <div class="hcwSummaryMainDiv">
+                <div class="hcwSummary" ng-if="observations.length">
+                    <div class="hcwSummary header">{{ 'ADD20' | translate }}</div>
+                    <div class="hcwSummary stats">
+                        <div>{{reportTotal}}</div>
+                        <div></div>
+                    </div>
+                </div>
+            	<div ng-repeat="hcw in reportHcwTitle" class="hcwSummary" ng-if="observations.length">
+                    <div class="hcwSummary header">{{hcw.title}}</div>
+                    <div class="hcwSummary stats">
+                        <div>{{hcw.count}}</div>
+                        <div>{{((hcw.count/reportTotal)*100).toFixed(0)}}%</div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="item in observations | filter:searchText" >
+            	<div class="item item-divider report-date-header" ng-if="item.header_date">{{item.header_date}}</div>
+                <ion-item class="item item-icon-right" ng-click="viewSingle(item);"  ng-init="dateDivider = item.datetime">
+                     {{item.hcw_title}} <span ng-if="item.hcw_name">{{' - '+item.hcw_name}}</span>
+                    <span class="item-meta">
+                    	{{item.datetime}} | {{(item.moment1+item.moment2+item.moment3+item.moment4+item.moment5).length > 1 ? ('ADD2' | translate):('ADD1' | translate)}}
+                        {{item.moment1+' '+item.moment2+' '+item.moment3+' '+item.moment4+' '+item.moment5}} | 
+                        <span>{{item.hh_compliance == 'missed' ? ('S11' | translate) : ('S10' | translate) }}</span>
+					</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                </ion-item>
+            </div>
+         </ion-list>
+         <h4 class="text-center" ng-if="!observations.length">
+         	<br /><br />{{filterMessage}}
+         </h4>
+    </ion-content>
+</ion-view>

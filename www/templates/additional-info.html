@@ -1,0 +1,76 @@
+<ion-modal-view class="addinfo-modal">
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">{{ 'AF1' | translate }}</h1>
+        <div class="buttons" style="display:none;">
+        	<button class="button button-clear button-icon ion-android-close" ng-click="hideAdditionalInfo()"></button>
+        </div>
+    </ion-header-bar>
+     
+    <ion-content on-swipe-down="hideAdditionalInfo()" has-bouncing="false">
+        <div class="sidenote">
+        {{ 'AF2' | translate }}
+        </div>
+       
+        <!-- <ion-list>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Contact'">{{ 'AF3' | translate }}</ion-radio>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Airborne'">{{ 'AF4' | translate }}</ion-radio>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Droplet'">{{ 'AF5' | translate }}</ion-radio>
+        </ion-list>	 -->
+
+        <div class="occupationalRiskDiv">
+            <h1 class="occupationalRiskH1">OCCUPATIONAL RISK</h1>
+        </div>
+        <div class="button-bar">
+            <a class="button" ng-class="{'button-positive': isActive('Contact')}" ng-click="setActive('Contact')">{{ 'AF3' | translate }}</a>
+            <a class="button" ng-class="{'button-positive': isActive('Airborne')}" ng-click="setActive('Airborne')">{{ 'AF4' | translate }}</a>
+            <a class="button" ng-class="{'button-positive': isActive('Droplet')}" ng-click="setActive('Droplet')">{{ 'AF5' | translate }}</a>
+        </div>
+        
+        <div class="bar bar-positive">
+            <h1 class="title occupationalRiskH1">{{ 'AF6' | translate }}</h1>
+        </div>
+        
+        <ul class="list" style="margin-top:43px; margin-bottom:0">
+            <li class="item item-toggle">
+                {{ 'AF7' | translate }}
+                <label class="toggle toggle-royal">
+                    <input type="checkbox" ng-change="donOnChanged()" ng-model="multimoment.gloves" ng-true-value="'YES'" ng-false-value="'NO'">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                {{ 'AF8' | translate }}
+                <label class="toggle toggle-royal">
+                    <input type="checkbox" ng-change="donOnChanged()" ng-model="multimoment.gown" ng-true-value="'YES'" ng-false-value="'NO'">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            
+            <li class="item item-toggle">
+                {{ 'AF9' | translate }}
+                <label class="toggle toggle-royal">
+                    <input type="checkbox" ng-change="donOnChanged()" ng-model="multimoment.mask" ng-true-value="'YES'" ng-false-value="'NO'">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <div class="masktype" ng-if="multimoment.mask == 'YES'">
+                <div class="title">- {{ 'AF10' | translate }} -</div>
+                <div class="button-bar padding">
+                    <!-- <a class="button" ng-class="{ 'active':multimoment.maskType == 'Surgical'}" 		ng-click="multimoment.maskType = 'Surgical'">{{ 'AF11' | translate }}</a>
+                    <a class="button button-balanced button-small" ng-class="{ 'active':multimoment.maskType == 'High Filtration'}" ng-click="multimoment.maskType = 'High Filtration'">{{ 'AF12' | translate }}</a>
+                    <a class="button button-balanced button-small" ng-class="{ 'active':multimoment.maskType == 'Other'}" 			ng-click="multimoment.maskType = 'Other'">{{ 'AF13' | translate }}</a> -->
+
+                    <a class="button" ng-class="{ 'button-positive':multimoment.maskType == 'Surgical'}"         ng-click="multimoment.maskType = 'Surgical'">{{ 'AF11' | translate }}</a>
+                    <a class="button" ng-class="{ 'button-positive':multimoment.maskType == 'High Filtration'}" ng-click="multimoment.maskType = 'High Filtration'">{{ 'AF12' | translate }}</a>
+                    <a class="button" ng-class="{ 'button-positive':multimoment.maskType == 'Other'}"           ng-click="multimoment.maskType = 'Other'">{{ 'AF13' | translate }}</a>
+                </div>
+            </div>
+        </ul>
+	</ion-content>
+</ion-modal-view>

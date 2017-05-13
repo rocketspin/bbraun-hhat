@@ -1,0 +1,64 @@
+<div class="list text-left">
+        
+    <div>
+        <label class="item item-input">
+            <span class="input-label">{{ 'T2' | translate }}:</span>
+            <input type="date" ng-model="filter.dateFrom" placeholder="{{ 'T2' | translate }}" ng-max="filter.dateTo"/>
+        </label>
+    </div>
+    <div>
+        <label class="item item-input">
+            <span class="input-label">{{ 'T3' | translate }}:</span>
+            <input type="date" ng-model="filter.dateTo" placeholder="{{ 'T2' | translate }}"/>
+        </label>
+    </div>
+    <div>
+        <!-- <label class="item item-input item-select" ng-if="$storage.userData.group_id == 3"> -->
+        <label class="item item-input item-select">
+        	<span class="input-label">{{ 'T4' | translate }}:</span>
+            <select class="" id="" ng-model="filter.auditor" ng-selected="filter.auditor" ng-options="loc.id as loc.full_name for loc in $storage.members">
+            	<option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label class="item item-input item-select">
+        	<span class="input-label">{{ 'T5' | translate }}:</span>
+            <select ng-model="filter.healthcare" ng-options="loc.id as loc.name for loc in $storage.locations.healthcare">
+            	<option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label class="item item-input item-select">
+        	<span class="input-label">{{ 'ADD21' | translate }}:</span>
+            <select ng-model="filter.department" ng-options="loc.id as loc.name for loc in $storage.locations.location1">
+            	<option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label class="item item-input item-select">
+            <span class="input-label">{{ 'ADD22' | translate }}:</span>
+            <select ng-model="filter.subDepartment" ng-options="loc.id as loc.name for loc in $storage.locations.location4">
+                <option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>  
+    <div>
+        <label class="item item-input item-select">
+            <span class="input-label">{{ 'ADD23' | translate }}:</span>
+            <select ng-model="filter.ward" ng-options="loc.id as loc.name for loc in $storage.locations.location3">
+                <option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>  
+    <div>
+        <label class="item item-input item-select">
+        	<span class="input-label">{{ 'ADD24' | translate }}:</span>
+            <select ng-model="filter.patient" ng-options="loc.id as loc.name for loc in $storage.locations.location2">
+            	<option value="">{{ 'T12' | translate }}</option>
+            </select>
+        </label>
+    </div>
+</div>

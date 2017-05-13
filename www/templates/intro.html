@@ -1,0 +1,21 @@
+<ion-view view-title="{{ 'A1' | translate }}">
+	
+    <ion-header-bar class="bar-balanced">
+        <h1 class="title">{{ 'A1' | translate }}</h1>
+        <div class="buttons">
+            <button class="button button-clear icon-right ion-ios-arrow-right" ng-if="currentState == 'intro'" ng-click="startApp();">Skip </button>
+            <a class="button button-clear icon-right ion-ios-arrow-right" ng-if="currentState == 'app.intro'" href="#/app/home">{{ 'A2' | translate }} </a>
+        </div>
+    </ion-header-bar>
+    
+    <ion-content class="padding">
+    	<div class="padding">
+            <h3>{{ 'A3' | translate }}</h3><br />
+            <p>{{ 'A4' | translate }}</p>
+            <p>{{ 'A5' | translate }}</p>
+            <center>
+            	<a class="button circle button-balanced" ng-if="!$storage.defaultData" href="#contact">{{ 'A6' | translate }}</a>
+            </center>
+        </div>
+    </ion-content>
+</ion-view>

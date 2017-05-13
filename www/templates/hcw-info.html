@@ -1,0 +1,20 @@
+<ion-modal-view class="addinfo-modal hcw">
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">HEALTHCARE WORKER</h1>
+        <div class="buttons" style="display:none;">
+        	<button class="button button-clear button-icon ion-android-close" ng-click="hideHcwInfo()"></button>
+        </div>
+    </ion-header-bar>
+     
+    <ion-content on-swipe-down="hideHcwInfo()" has-bouncing="false">
+    	<div class="sidenote">Drag  down to go back to opportunity screen</div>
+       <div class="item item-input item-stacked-label clear-input">
+            <label class="input-label" for="healthcare-worker-name">Healthcare Worker Name (Optional):</label>
+            <input type="text" id="healthcare-worker-name" ng-model="observation.healthWorker.name" focus-me/>
+            <button class="button button-clear icon ion-android-close button-small button-assertive" ng-if="observation.healthWorker.name" ng-click="observation.healthWorker.name = ''"/></button>
+        </div>
+        <ion-list>
+            <ion-radio ng-repeat="item in $storage.locations.healthcare" ng-model="observation.healthWorker.type" ng-value="item">{{item.name}}</ion-radio>
+        </ion-list>
+	</ion-content>
+</ion-modal-view>

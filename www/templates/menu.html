@@ -1,0 +1,66 @@
+<ion-side-menus enable-menu-with-back-views="false" class="main-page">
+    <ion-side-menu-content drag-content="true">
+        <ion-nav-bar class="bar-balanced" align-title="center">
+        	<ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-back-button  class="button-clear button button-icon">
+            	<i class="ion-android-arrow-back"></i>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    
+  
+    <ion-side-menu side="left" class="sidebar" is-enabled="true">
+        <ion-header-bar class="bar-dark" align-title="left">
+        	<i class="ion-person"></i>
+        	<h1 class="title" id="user-fullname">{{$storage.userData.first_name+' '+$storage.userData.last_name}}</h1>
+            <p id="user-company">{{$storage.userData.company_name}}</p>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item menu-close href="#/app/home">
+                	<i class="ion-ios-home-outline"></i><span>{{ 'AI1' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/intro">
+                	<i class="ion-ios-information-outline"></i><span>{{ 'AI2' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/startrecord/real">
+                	<i class="ion-ios-compose-outline"></i><span>{{ 'AI3' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/summary">
+                	<i class="ion-ios-list-outline"></i><span>{{ 'AI4' | translate }}</span>
+                </ion-item>
+                            
+                                
+                <ion-item menu-close href="#/app/reports/{{$storage.userData.id}}" class="report-nav-manager">
+                	<i class="ion-ios-paper-outline"></i><span>{{ 'AI5' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/profile">
+                	<i class="ion-ios-person-outline"></i><span>{{ 'AI6' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/startrecord/trial">
+                	<i class="ion-ios-settings"></i><span>{{ 'AI7' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/videos">
+                	<i class="ion-ios-film-outline"></i><span>{{ 'AI8' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close href="#/app/faq">
+                	<i class="ion-ios-help-outline"></i><span>{{ 'AI9' | translate }}</span>
+                </ion-item>
+                
+                <ion-item menu-close ng-click="logout();" href="#/app/home">
+                	<i class="ion-log-out"></i><span>{{ 'AI10' | translate }}</span>
+                </ion-item>
+            </ion-list><br />
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

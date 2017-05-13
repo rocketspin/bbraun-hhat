@@ -1,0 +1,29 @@
+<ion-view view-title="<i class='ion-home icon-title'></i>" align-title="center" hide-back-button="true" enable-menu-with-back-views="true">
+    <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <ion-content class="green-bg-img home-page" has-bouncing="false">
+
+            <ul class="list home-menu">
+                <!-- <li><a href="#/app/intro"><img src="img/icons/introduction.png"/><br />{{ 'H1' | translate }}</a></li>
+                <li><a href="#/app/startrecord/real"><img src="img/icons/record.png"/><br />{{ 'H2' | translate }}</a></li>
+                <li><a href="#/app/summary"><img src="img/icons/reports.png"/><br />{{ 'H3' | translate }}</a></li>
+                <li><a href="#/app/reports/{{$storage.userData.id}}"><img src="img/icons/summary.png"/><br />{{ 'H4' | translate }}</a></li>
+                <li><a href="#/app/profile"><img src="img/icons/profile.png"/><br />{{ 'H5' | translate }}</a></li>
+                <li><a href="#/app/startrecord/trial"><img src="img/icons/simulator.png"/><br />{{ 'H6' | translate }}</a></li>
+                <li><a href="#/app/videos"><img src="img/icons/video.png"/><br />{{ 'H7' | translate }}</a></li>
+                <li><a href="#/app/faq"><img src="img/icons/faq.png"/><br />{{ 'H8' | translate }}</a></li> -->
+
+                <li><a href="#/app/intro"><img src="img/icons/introduction.png"/><br />{{ 'H1' | translate }}</a></li>
+                <li><a href="#/app/startrecord/real"><img src="img/icons/record.png"/><br />{{ 'H2' | translate }}</a></li>
+                <li><a ng-click="goTo('app.summary')"><img src="img/icons/reports.png"/><br />{{ 'H3' | translate }}</a></li>
+                <li><a ng-click="goToReports('app.reports', {{$storage.userData.id}})"><img src="img/icons/summary.png"/><br />{{ 'H4' | translate }}</a></li>
+                <li><a href="#/app/profile"><img src="img/icons/profile.png"/><br />{{ 'H5' | translate }}</a></li>
+                <li><a href="#/app/startrecord/trial"><img src="img/icons/simulator.png"/><br />{{ 'H6' | translate }}</a></li>
+                <li><a ng-click="goTo('app.videos')"><img src="img/icons/video.png"/><br />{{ 'H7' | translate }}</a></li>
+                <li><a href="#/app/faq"><img src="img/icons/faq.png"/><br />{{ 'H8' | translate }}</a></li>
+
+            </ul>
+            <div class="clearfix"></div>
+    </ion-content>
+</ion-view>

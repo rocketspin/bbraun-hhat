@@ -1,0 +1,24 @@
+<ion-view view-title="{{ 'Z1' | translate }}" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" ng-click="backtotarget()"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+        <a class="button button-icon ion-home" ng-click="recordStep.home();"></a>
+    </ion-nav-buttons>
+    
+	<ion-header-bar class="bar bar-subheader hh-sub-header">
+		<h1 class="title">{{ 'Z2' | translate }}</h1>
+	</ion-header-bar>
+    <ion-content class="has-button-footer" has-bouncing="false">
+    	<div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+    	<div ng-bind-html="alertMessage"></div>
+        <div class="list padding">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">{{ 'Z3' | translate }}</span>
+                <input type="text" ng-model="observation.organizationName" focus-me>
+            </label>
+            <button class="button button-balanced button-block" ng-click="recordStep.two();">{{ 'Z4' | translate }} <i class="ion-android-arrow-forward"></i></button>
+        </div>
+    </ion-content>
+</ion-view>

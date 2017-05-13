@@ -1,0 +1,92 @@
+<ion-view view-title="Confirm Submission" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/record/9"></a>
+    </ion-nav-buttons>
+    
+	<ion-nav-buttons side="right">
+        <button class="button button-icon ion-clipboard" ng-click="showSummary();"></button>
+    </ion-nav-buttons>
+    
+    <ion-content class="has-button-footer">
+    	<div ng-bind-html="alertMessage"></div>
+        <div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+        <div class="list">
+        	<div class="item item-divider">Location Audited</div>
+            <div class="item" ng-if="observation.organizationName">
+                Branch<span class="item-note">{{observation.organizationName}}</span>
+            </div>
+            <div class="item">
+                Location Level 1<span class="item-note">{{observation.location.levelOne.name}}</span>
+            </div>
+            <div class="item">
+                Location Level 2<span class="item-note">{{observation.location.levelTwo.name}}</span>
+            </div>
+            <div class="item">
+                Location Level 3<span class="item-note">{{observation.location.levelThree.name}}</span>
+            </div>
+            <div class="item">
+                Location Level 4<span class="item-note">{{observation.location.levelFour.name}}</span>
+            </div>
+                        
+            <div class="item item-divider">&nbsp;</div>
+            <div class="item">
+                Date and Time<span class="item-note">{{observation.moment.dateTime}}</span>
+            </div>
+            <div class="item item-divider">&nbsp;</div>
+            <div class="item">
+                Type of HCW
+                <span class="item-note">{{observation.healthWorker.type.name}}</span>
+            </div>
+            <div class="item">
+                Name of HCW
+                <span class="item-note">
+                    {{observation.healthWorker.name}}
+                    <span ng-if="!observation.healthWorker.name">&oline;</span>
+                </span>
+            </div>
+            
+            <div class="item item-divider">&nbsp;</div>
+            
+            <div class="item">
+                H.H. Moment<span class="item-note">{{observation.moment.type}}</span>
+            </div>
+            <div class="item">
+                H.H. Action<span class="item-note">{{observation.moment.stepOne}}</span>
+            </div>
+            <div class="item">
+                H.H. Compliance<span class="item-note">{{observation.moment.stepOne == 'No' ? 'Failed' : 'Passed'}}</span>
+            </div>
+            <div class="item">
+                Occupational Risk<span class="item-note">{{observation.moment.stepTwo}}</span>
+            </div>
+     
+            <div class="item" ng-if="observation.moment.stepTwo && observation.moment.stepTwo != 'NA' && glove">
+                Glove Compliance<span class="item-note">{{glove}}</span>
+            </div>
+            <div class="item" ng-if="observation.moment.stepTwo && observation.moment.stepTwo != 'NA'  && gown">
+                Gown Compliance<span class="item-note">{{gown}}</span>
+            </div>
+            <div class="item" ng-if="observation.moment.stepTwo && observation.moment.stepTwo != 'NA'  && mask">
+                Mask Compliance<span class="item-note">{{mask}}</span>
+            </div>
+            <div class="item" ng-if="observation.moment.mask && observation.moment.stepTwo && observation.moment.stepTwo != 'NA'">
+                Mask Type<span class="item-note">{{observation.moment.maskType}}</span>
+            </div>
+            <div class="item" ng-if="observation.moment.type">
+                Notes
+                <span class="item-note">
+                	{{observation.moment.note}}
+                    <span ng-if="!observation.moment.note">&oline;</span>
+                </span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+<ion-footer-bar class="button-footer">
+    <div class="button-bar single">
+        <a class="button icon button-dark" style="background:#027556; border-color:#027556;" ng-click="SubmitObservation();">Confirm <i class="ion-android-arrow-forward"></i></a>
+    </div>
+</ion-footer-bar>
+
+

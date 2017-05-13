@@ -1,0 +1,18 @@
+<ion-view view-title="Auditors" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/home"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="alert info icon" ng-if="!networkState">No internet connection.</div>
+        <ion-list class="list animated bounceInLeft auditor-list">
+        	<ion-item class="item item-icon-right" href="#/app/reports/{{$storage.userData.id}}">
+            	 My observations
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+            <ion-item class="item item-icon-right" href="#/app/reports/0">
+            	 Institution observations
+                <i class="icon ion-ios-arrow-right"></i>
+            </ion-item>
+         </ion-list>
+    </ion-content>
+</ion-view>

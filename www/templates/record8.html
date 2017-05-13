@@ -1,0 +1,81 @@
+<ion-view view-title="{{pageTitle}}" hide-back-button="true" class="moment-page">
+    <!-- <ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/record/6"></a>
+    </ion-nav-buttons> -->
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-clipboard" ng-click="showSummary();"></button>
+    </ion-nav-buttons>
+   
+    <ion-content has-bouncing="false">
+    	<div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+
+        <div class="hcw-div">
+            <div>
+                <!-- <ion-label primary stacked>HCW Type*:</ion-label>
+                <br /> -->
+                <select class="ion-input-select" id="healthcare-worker-type" ng-model="observation.healthWorker.type" ng-options="item.name for item in $storage.locations.healthcare track by item.name" ng-change="hcwChanged()">
+                    <option value="">{{ 'AE2' | translate }}</option>
+                </select>
+            
+
+            </div>
+            <div>
+                <!-- <ion-label primary stacked>Name (optional):</ion-label><br /> -->
+                <input type="text" id="healthcare-worker-name" ng-model="observation.healthWorker.name" placeholder="{{ 'AE3' | translate }}"/>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="bar moment-header">
+            <h1 class="title">{{ 'AE4' | translate }}</h1>
+            <div class="buttons">
+                <button class="button button-clear button-small button-icon ion-compose" ng-class="{'activeNotes': !observation.note}" style="color: #711e82; opacity: 1;" ng-click="popUpNote()"></button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="five-moments">
+        	<img src="img/5MOMENTS_ILLUSTRATION_App_green.jpg"/>
+            <button class="moments-one" 	ng-class="{'active':multimoment.moment1}" ng-click="selectIndication(1)"></button>
+            <button class="moments-two" 	ng-class="{'active':multimoment.moment2}" ng-click="selectIndication(2)"></button>
+            <button class="moments-three" 	ng-class="{'active':multimoment.moment3}" ng-click="selectIndication(3)"></button>
+            <button class="moments-four" 	ng-class="{'active':multimoment.moment4}" ng-click="selectIndication(4)"></button>
+            <button class="moments-five" 	ng-class="{'active':multimoment.moment5}" ng-click="selectIndication(5)"></button>
+        </div>
+        
+        <div class="bar moment-header">
+        	<h1 class="title">{{ 'AE8' | translate }}</h1>
+        </div>
+        
+        <div class="moment-actions">
+            <div class="moment-buttons">
+                <div class="moment-button-five">
+                    <button class="button circle button-balanced" 		ng-click="multimoment.compliance = 'rub'" 		ng-class="{'active':multimoment.compliance == 'rub'}">{{ 'AE9' | translate }}</button>
+                </div>
+                <div class="moment-button-five">
+                    <button class="button circle button-balanced" 		ng-click="multimoment.compliance = 'wash'" 		ng-class="{'active':multimoment.compliance == 'wash'}">{{ 'AE10' | translate }}</button>
+                </div>
+                <div class="moment-button-five">
+                    <button class="button red circle button-balanced" 	ng-click="multimoment.compliance = 'missed'" 	ng-class="{'active':multimoment.compliance == 'missed'}">{{ 'AE11' | translate }}</button>
+                </div>
+                <div class="moment-button-five">
+                    <button class="button button-balanced" ng-click="multimoment.gloves = multimoment.gloves == 'YES' ? 'NO' : 'YES'" ng-class="{ 'active':multimoment.gloves == 'YES'}">{{ 'AE12' | translate }}</button>
+                </div>
+                <div class="moment-button-five">
+                    <button class="button button-balanced icon ion-plus-round" ng-click="showAdditionalInfo()" ng-class="{'active':multimoment.exposure || multimoment.gloves == 'YES' || multimoment.gown == 'YES'  || multimoment.mask == 'YES'}"></button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    
+    <ion-footer-bar class="button-footer" style="background:#00B482; width:100%;">
+        <div class="button-bar" style="margin: 0 1%;">
+            <a class="button icon button-dark " ng-click="moveLocation();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'ADD28' | translate }} <i class="ion-android-arrow-back"></i></a>
+        </div>
+        <div class="button-bar" style="margin: 0 1%;">
+            <a class="button icon button-dark " ng-click="stopObserving();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'ADD29' | translate }} <i class="ion-android-close"></i></a>
+        </div>
+        <div class="button-bar" style="margin: 0 1%;">
+            <a class="button icon button-dark " ng-click="multiObserveSend();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'AE13' | translate }} <i class="ion-android-arrow-forward"></i></a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

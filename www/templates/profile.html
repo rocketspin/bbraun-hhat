@@ -1,0 +1,54 @@
+<ion-view view-title="{{ 'Q1' | translate }}" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/home"></a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+        <button class="button button-icon ion-refresh" ng-click="syncData();"></button>
+    </ion-nav-buttons>
+    
+    <ion-content>
+    	<div ng-bind-html="alertMessage"></div>
+			            
+        	<div class="item item-divider">
+            {{ 'Q2' | translate }}
+            </div>
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q3' | translate }}</span>
+                <input type="text" placeholder="{{ 'Q3' | translate }}" ng-model="userData.first_name"/>
+            </label>
+            
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q4' | translate }}</span>
+                <input type="text" placeholder="{{ 'Q4' | translate }}" ng-model="userData.last_name"/>
+            </label>
+            
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q5' | translate }}</span>
+                <input type="text" placeholder="{{ 'Q5' | translate }}" ng-model="userData.email"/>
+            </label>
+            
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q6' | translate }}</span>
+                <textarea ng-model="userData.address" rows="3"></textarea>
+            </label>
+        	
+            <div class="item item-divider">
+            {{ 'Q7' | translate }}
+            </div>
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q8' | translate }}</span>
+                <input type="password" placeholder="{{ 'Q8' | translate }}" ng-model="passwordChange.current_password"/>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q9' | translate }}</span>
+                <input type="password" placeholder="{{ 'Q9' | translate }}" ng-model="passwordChange.new_password"/>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">{{ 'Q10' | translate }}</span>
+                <input type="password" placeholder="{{ 'Q10' | translate }}" ng-model="passwordChange.retype_new_password"/>
+            </label>
+        <div class="padding">
+        	<button class="button button-balanced button-block" ng-click="updateProfile();">{{ 'Q11' | translate }}</button>
+        </div>
+	</ion-content>
+</ion-view>

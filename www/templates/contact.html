@@ -1,0 +1,57 @@
+<ion-header-bar class="bar-balanced">
+	<div class="buttons"><a href="#login" ng-if="$storage.defaultData" class="button button-clear icon-left ion-ios-arrow-left">Back</a></div>
+	<h1 class="title">{{ 'B1' | translate }}</h1>
+    <div class="buttons">
+        <button class="button button-clear icon-right ion-ios-arrow-right" ng-if="!$storage.defaultData" ng-click="startApp();">{{ 'B2' | translate }} </button>
+    </div>
+</ion-header-bar>
+
+<ion-view view-title="Contact Us B. Braun">
+    <ion-content>
+    	<div ng-bind-html="alertMessage"></div>
+            <div class="list list-inset">
+            	<label class="item item-input">
+                    <span class="input-label">{{ 'B3' | translate }}:</span>
+                    <input type="text" ng-model="contact.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B4' | translate }}:</span>
+                    <input type="text" ng-model="contact.contact_no">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{ 'D1' | translate }}:</span>
+                    <input type="email" ng-model="contact.email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B5' | translate }}:</span>
+                    <input type="text" ng-model="contact.designation">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B6' | translate }}:</span>
+                    <input type="text" ng-model="contact.department">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B7' | translate }}:</span>
+                    <input type="text" ng-model="contact.hospital">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B8' | translate }}:</span>
+                    <input type="number" ng-model="contact.no_of_beds">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B9' | translate }}:</span>
+                    <input type="text" ng-model="contact.address">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{ 'B10' | translate }}:</span>
+                    <input type="text" ng-model="contact.country">
+                </label>
+                
+                <button class="button button-balanced button-block" ng-click="sendMessage();">{{ 'B11' | translate }}</button>
+            </div>
+    </ion-content>
+</ion-view>

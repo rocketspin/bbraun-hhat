@@ -1,0 +1,83 @@
+<ion-view view-title="{{ 'U1' | translate }}" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <a class="button button-icon ion-ios-arrow-back" href="#/app/reports/{{$storage.selectedReport}}"> {{ 'U2' | translate }}</a>
+    </ion-nav-buttons>
+	<ion-header-bar class="bar bar-subheader hh-sub-header">
+    	<h1 class="title">{{ 'U3' | translate }}</h1>
+	</ion-header-bar>
+    <ion-content>    	
+    	<div ng-bind-html="alertMessage"></div>
+        <div class="list">
+        	<div class="item item-divider">{{ 'U4' | translate }}</div>
+            <!-- <div class="item">
+                {{ 'U5' | translate }}<span class="item-note">{{$storage.reportData.organization}}</span>
+            </div> -->
+            <div class="item">
+                {{ 'U6' | translate }}<span class="item-note">{{$storage.reportData.location_level1}}</span>
+            </div>
+            <div class="item">
+                {{ 'U9' | translate }}<span class="item-note">{{$storage.reportData.location_level2}}</span>
+            </div>
+            <div class="item">
+                {{ 'U8' | translate }}<span class="item-note">{{$storage.reportData.location_level3}}</span>
+            </div>
+            <div class="item">
+                {{ 'U7' | translate }}<span class="item-note">{{$storage.reportData.location_level4}}</span>
+            </div>
+            
+            <div class="item item-divider">&nbsp;</div>
+            <div class="item">
+                {{ 'U10' | translate }}<span class="item-note">{{$storage.reportData.datetime}}</span>
+            </div>
+            <div class="item item-divider">&nbsp;</div>
+            
+            <div class="item">
+                {{ 'U11' | translate }}
+                <span class="item-note">{{$storage.reportData.hcw_title}}</span>
+            </div>
+            <div class="item">
+                {{ 'U12' | translate }}
+                <span class="item-note">
+                    {{$storage.reportData.hcw_name}}
+                </span>
+            </div>
+            <div class="item item-divider">&nbsp;</div>
+            
+            <div class="item" ng-if="$storage.reportData.hcw_title">
+                {{($storage.reportData.moment1+$storage.reportData.moment2+$storage.reportData.moment3+$storage.reportData.moment4 + $storage.reportData.moment5).length > 1 ? ('ADD2' | translate) : ('ADD1' | translate)}}
+                <span class="item-note"> 
+                	{{$storage.reportData.moment1}} 
+                    {{$storage.reportData.moment2}} 
+                    {{$storage.reportData.moment3}} 
+                    {{$storage.reportData.moment4}} 
+                    {{$storage.reportData.moment5}} 
+                </span>
+            </div>
+            <div class="item">
+                {{ 'U14' | translate }}<span class="item-note">{{$storage.reportData.hh_compliance | uppercase}}</span>
+            </div>
+            <div class="item">
+                {{ 'U15' | translate }}<span class="item-note">{{$storage.reportData.hh_compliance == 'missed' ? ('S11' | translate) : ('S10' | translate)}}</span>
+            </div>
+            <div class="item">
+                {{ 'U16' | translate }}<span class="item-note">{{$storage.reportData.hh_compliance_type}}</span>
+            </div>
+       
+            <div class="item" ng-if="$storage.reportData.glove_compliance">
+                {{ 'U17' | translate }}<span class="item-note">{{$storage.reportData.glove_compliance}}</span>
+            </div>
+            <div class="item" ng-if="$storage.reportData.gown_compliance">
+                {{ 'U18' | translate }}<span class="item-note">{{$storage.reportData.gown_compliance}}</span>
+            </div>
+            <div class="item" ng-if="$storage.reportData.mask_compliance">
+                {{ 'U19' | translate }}<span class="item-note">{{$storage.reportData.mask_compliance}}</span>
+            </div>
+            <div class="item" ng-if="$storage.reportData.mask_type">
+                {{ 'U20' | translate }}<span class="item-note">{{$storage.reportData.mask_type}}</span>
+            </div>
+            <div class="item">
+                {{ 'U21' | translate }}<span class="item-note">{{$storage.reportData.note}}</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

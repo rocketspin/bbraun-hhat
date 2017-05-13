@@ -1,0 +1,57 @@
+<ion-view view-title="Summary" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <a class="button button-icon ion-home" ng-click="recordStep.home();"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a class="button button-clear" href="#/app/startrecord/{{observation.type}}">
+        <img src="img/logo-only.png" height="32px"/>&nbsp;
+        </a>
+    </ion-nav-buttons>
+    
+    <ion-content class="summary-page summary-modal">
+		<div class="list">
+            <div class="item">
+                Target Opportunities<span class="item-note">{{observation.numberOfObservations}}</span>
+            </div>
+            <div class="item">
+                Completed<span class="item-note">{{observation.summary.localDataCount + observation.summary.serverDataCount}}</span>
+            </div>
+            <div class="item">
+                Saved In Device<span class="item-note">{{observation.summary.localDataCount}}</span>
+            </div>
+            <div class="item">
+                Submitted In Server<span class="item-note">{{observation.summary.serverDataCount}}</span>
+            </div>
+        </div>
+        
+        <div class="table-container">
+        	<div class="row header text-center">
+                <div class="col"><strong>HAND HYGIENE COMPLIANCE</strong></div>
+            </div>
+            
+            <div class="row header text-center" style="font-size:12px;">
+                <div class="col">Moment</div>
+                <div class="col">Total</div>
+                <div class="col">Passed</div>
+                <div class="col">Failed</div>
+                <div class="col">Percent</div>
+            </div>
+            
+            <div ng-repeat="(key, item) in observation.summary.data">
+                <div class="row text-center child" ng-repeat="(subkey, subitem) in item">
+                    <div class="col col-20" ng-bind="subkey"></div>
+                    <div class="col col-20" ng-bind="subitem.failed + subitem.passed"></div>
+                    <div class="col col-20" ng-bind="subitem.passed"></div>
+                    <div class="col col-20" ng-bind="subitem.failed"></div>
+                    <div class="col col-20" ng-bind="subitem.percentage.toFixed(2)+'%'"></div>
+                </div>
+                
+                <div class="row text-center child">
+                    <div class="col col-80"><strong>{{getNestedValue($storage.locations.healthcare, 'id', key).name+ ' ('+$storage.observation.summary.total[key].members+')'}}</strong></div>
+                    <div class="col col-20"><strong>{{$storage.observation.summary.total[key].total.toFixed(2)+'%'}}</strong></div>
+                </div>
+            </div>
+        </div>
+	</ion-content>
+    
+</ion-view>

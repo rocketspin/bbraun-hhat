@@ -1,0 +1,79 @@
+<ion-view view-title="(9/10) {{observation.moment.type}}">
+	
+    <ion-nav-buttons side="right">
+        <a class="button button-icon ion-ios-undo" href="#/app/moments/select"></a>
+    </ion-nav-buttons>
+    <ion-content class="has-button-footer" has-bouncing="false">
+    	<div ng-bind-html="alertMessage"></div>
+        
+        <div class="moment-container">
+            <div class="list moment-list active">
+            	<div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+                <div class="item moment-main-item selected-moment text-center">
+                    Moment Details
+                </div>
+                
+                <div class="animated moment-step-container bounceInLeft">
+                    <div class="item moment">
+                        <div class="row">
+                            <div class="col col-90">
+                                <div class="button-bar">
+                                    <a ng-repeat="button in buttonStepOne"
+                                    ng-model="observation.moment.stepOne"
+                                    bar-select="button.value"
+                                    class="button-small"
+                                    >{{button.text}}</a>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <button class="button button-small button-icon icon ion-document-text" ng-class="{'active': observation.moment.note}" ng-click="popUpMomentNote();"></button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="item moment animated" ng-class="{ 'bounceInLeft':observation.moment.stepOne}" ng-if="observation.moment.type != 5">
+                    	<div class="padding">
+                            <div class="button-bar">
+                                <a ng-repeat="button in buttonStepTwo"
+                                ng-model="observation.moment.stepTwo"
+                                bar-select="button.value"
+                                class="button-small"
+                                >{{button.text}}</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="moment-step-three animated" ng-class="{'bounceInLeft':observation.moment.stepTwo && observation.moment.stepTwo != 'NA'}">
+
+                            <ion-toggle ng-if="observation.moment.type == 1 || observation.moment.type == 2" ng-model="observation.moment.glove" toggle-class="toggle-balanced">Don on Glove</ion-toggle>
+                            <ion-toggle ng-if="observation.moment.type == 1 || observation.moment.type == 2" ng-model="observation.moment.gown" toggle-class="toggle-balanced">Don on Gown</ion-toggle>
+                            <ion-toggle ng-if="observation.moment.type == 1 || observation.moment.type == 2" ng-model="observation.moment.mask" toggle-class="toggle-balanced">Don on Mask</ion-toggle>
+                            
+                            <ion-toggle ng-if="observation.moment.type == 3 || observation.moment.type == 4" ng-model="observation.moment.glove" toggle-class="toggle-balanced">Remove Glove </ion-toggle>
+                            <ion-toggle ng-if="observation.moment.type == 3 || observation.moment.type == 4" ng-model="observation.moment.gown" toggle-class="toggle-balanced">Remove Gown</ion-toggle>
+                            <ion-toggle ng-if="observation.moment.type == 3 || observation.moment.type == 4" ng-model="observation.moment.mask" toggle-class="toggle-balanced">Remove Mask</ion-toggle>
+                        
+                        <div class="item animated" ng-class="{'bounceInLeft': observation.moment.mask}" ng-if="observation.moment.type != 5">
+                            <div class="button-bar">
+                                <a ng-repeat="button in buttonMaskType"
+                                ng-model=" observation.moment.maskType"
+                                bar-select="button.value"
+                                class="button-small"
+                                >{{button.text}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+               
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+<ion-footer-bar class="button-footer">
+    <div class="button-bar single">
+        <a class="button icon button-dark " ng-click="sendConfirmation();">Submit <i class="ion-android-arrow-forward"></i></a>
+    </div>
+</ion-footer-bar>

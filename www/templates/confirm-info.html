@@ -1,0 +1,45 @@
+<ion-modal-view class="addinfo-modal">
+    <ion-header-bar class="bar bar-positive">
+        <h1 class="title">PRECAUTION</h1>
+        <div class="buttons" style="display:none;">
+        	<button class="button button-clear button-icon ion-android-close" ng-click="hideAdditionalInfo()"></button>
+        </div>
+    </ion-header-bar>
+     
+    <ion-content on-swipe-down="hideAdditionalInfo()" has-bouncing="false">
+        <div class="sidenote">
+        Drag  down to go back to opportunity screen
+        </div>
+       
+        <ion-list>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Contact'">Contact</ion-radio>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Airborne'">Airborne</ion-radio>
+            <ion-radio ng-model="multimoment.exposure" ng-value="'Droplet'">Droplet</ion-radio>
+        </ion-list>	
+        
+        <div class="bar bar-positive">
+            <h1 class="title">ACTION</h1>
+        </div>
+        
+        <ul class="list" style="margin-top:43px; margin-bottom:0">
+            <li class="item item-toggle">
+                Don on Gloves
+                <label class="toggle toggle-royal">
+                    <input type="checkbox" ng-model="multimoment.gloves" ng-true-value="'Don on Gloves'" ng-false-value="''">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+            <li class="item item-toggle">
+                Don on Gown
+                <label class="toggle toggle-royal">
+                    <input type="checkbox" ng-model="multimoment.gown" ng-true-value="'Don on Gown'" ng-false-value="''">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>       
+        </ul>
+	</ion-content>
+</ion-modal-view>

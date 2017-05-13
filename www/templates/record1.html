@@ -1,0 +1,21 @@
+<ion-view view-title="{{ 'Y1' | translate }}" hide-back-button="true">
+	<ion-nav-buttons side="left">
+        <!-- <a class="button button-icon ion-android-arrow-back" ng-click="recordStep.home();"></a> -->
+        <a class="button button-icon ion-android-arrow-back" href="#/app/home"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon ion-home" href="#/app/home"></a>
+    </ion-nav-buttons>
+    <ion-content class="has-button-footer" has-bouncing="false">
+    	<div ng-bind-html="alertMessage"></div>
+        <div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+        <div class="list list-inset">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">{{ 'Y2' | translate }}:</span>
+                <input type="number" ng-model="observation.numberOfObservations" focus-me/>
+            </label>
+            <button class="button button-balanced button-block" ng-click="recordStep.one();">{{ 'Y3' | translate }} <i class="ion-android-arrow-forward"></i></button>
+        </div>
+    </ion-content>  
+</ion-view>
+

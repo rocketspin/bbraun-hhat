@@ -1,0 +1,24 @@
+<ion-view view-title="" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <a class="button button-icon ion-android-arrow-back" href="#/app/record/3"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-buttons side="right">
+        <a class="button button-icon ion-home" ng-click="recordStep.home();"></a>
+    </ion-nav-buttons>
+        
+    <ion-header-bar class="bar bar-subheader hh-sub-header">
+        <h1 class="title">{{ 'AB1' | translate }}</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+        <div ng-bind-html="alertMessage"></div>
+        <div class="alert icon info" ng-if="observation.type == 'trial'">{{ 'P1' | translate }}.</div>
+        
+        <div class="list">
+            <div class="item item-icon-right" ng-repeat="item in $storage.locations.location4" ng-click="recordStep.four(item);">
+                {{item.name}}<i class="icon ion-ios-arrow-right"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

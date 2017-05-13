@@ -1,0 +1,13 @@
+{
+  "name": "hand-hygiene",
+  "app_id": "82e0ac7d",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "type": "ionic1"
+}

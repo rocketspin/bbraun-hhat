@@ -1,0 +1,43 @@
+<ion-view view-title="Login" hide-nav-bar="false" hide-back-button="true">
+    <ion-content class="padding login-screen" has-bouncing="false">
+    	<form onsubmit="return false;" method="post">
+            <center class="logo-container"><img src="img/logo.png" class="logo"/></center>
+            <div class="login-input">
+            
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">{{ 'D1' | translate }}</span>
+                    <i class="ion-person"></i>
+                    <input type="email" placeholder="{{ 'D1' | translate }}" ng-model="user.email" autocomplete="off"/>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">{{ 'D2' | translate }}</span>
+                    <i class="ion-key"></i>
+                    <input type="password" placeholder="{{ 'D2' | translate }}" ng-model="user.password" autocomplete="off">
+                </label>
+            </div>
+            <button class="button button-balanced button-block button-login" ng-click="login();">{{ 'D3' | translate }}</button>
+            
+
+            <div class="list lang-container">
+                <label class="item item-input item-select lang-label">
+                    <div class="input-label">
+                        {{ 'D0' | translate }}
+                    </div>
+                    <select ng-model="mySelect" ng-change="ChangeLanguage(mySelect)">
+                        <option value="en">English</option>
+                        <option value="pt">Portugese</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                </label>
+            </div>
+            
+            <div ng-bind-html="alertMessage"></div>
+            <div class="text-center clearfix">
+                <a class="login-support-button button button-balanced button-clear button-full primary-button" href="#contact">{{ 'D4' | translate }}</a>
+                <a class="login-support-button button button-balanced button-clear button-full primary-button" href="#password">{{ 'D5' | translate }}</a><br />
+                <img src="img/powered.png" class="powered"/>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+
