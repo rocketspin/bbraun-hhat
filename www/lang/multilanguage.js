@@ -382,7 +382,8 @@ var translations = {
 		APP9    :    'Server Notification',
 		APP10   :    'Internet detected. There was ',
 		APP11   :    ' offline observation sent to the server.',
-		APP12   :    'Generating reports. Please wait. Processing time will depend on amount of data and quality of Internet connection.'
+		APP12   :    'Generating reports. Please wait. Processing time will depend on amount of data and quality of Internet connection.',
+		APP13   :    'Sending reports. Please wait. Processing time will depend on amount of data and quality of Internet connection.'
 
 	},
 	"pt"    :     {
@@ -767,7 +768,8 @@ var translations = {
 		APP9    :    'Notificação do servidor',
 		APP10   :    'Internet detectada. Houve ',
 		APP11   :    ' observação offline enviada para o servidor.',
-		APP12   :    'Gerando relatórios. Por favor, espere. O tempo de processamento dependerá da quantidade de dados e da qualidade da conexão com a Internet.'
+		APP12   :    'Gerando relatórios. Por favor, espere. O tempo de processamento dependerá da quantidade de dados e da qualidade da conexão com a Internet.',
+		APP13   :    'Enviando relatórios. Por favor, espere. O tempo de processamento dependerá da quantidade de dados e da qualidade da conexão com a Internet.'
 	},
 	"es"    :     {
 		A1    :    'Introducción',
@@ -1151,6 +1153,7 @@ var translations = {
 		APP9    :    'Notificación del servidor',
 		APP10   :    'Internet detectado. No había ',
 		APP11   :    ' observación fuera de línea enviada al servidor.',
-		APP12   :    'Generación de informes. Por favor espera. El tiempo de procesamiento dependerá de la cantidad de datos y la calidad de la conexión a Internet.'
+		APP12   :    'Generación de informes. Por favor espera. El tiempo de procesamiento dependerá de la cantidad de datos y la calidad de la conexión a Internet.',
+		APP13   :    'Envío de informes. Por favor espera. El tiempo de procesamiento dependerá de la cantidad de datos y la calidad de la conexión a Internet.'
 	}
 }

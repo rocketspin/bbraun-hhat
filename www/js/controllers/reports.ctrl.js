@@ -137,7 +137,7 @@ angular.module('reports.ctrl', [])
 							return false;
 						}
 						
-						$ionicLoading.show({template: '<ion-spinner>Loading...</ion-spinner><br>'+$translate.instant('APP12')});
+						$ionicLoading.show({template: '<ion-spinner>Loading...</ion-spinner><br>'+$translate.instant('APP13')});
 						// $ionicLoading.show({template: '<ion-spinner></ion-spinner><br>'+$translate.instant('V10')});
 						$scope.filter.download = index + 1;
 						
