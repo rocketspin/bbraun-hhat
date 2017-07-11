@@ -27,7 +27,8 @@ angular.module('reports.ctrl', [])
 		}
 	}
 	
-	if($stateParams.uid && $stateParams.uid > 0) $scope.filter.auditor = $stateParams.uid;
+	$scope.filter.auditor = null;
+	//if($stateParams.uid && $stateParams.uid > 0) $scope.filter.auditor = $stateParams.uid;
 	$scope.$storage.selectedReport = $stateParams.uid;
 	
 	$scope.networkState	= 1;
