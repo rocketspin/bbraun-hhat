@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ph.bbraun.handhygiene423814" version="1.2.9" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ph.bbraun.handhygiene423814" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HHAT</name>
     <description>
         This tool was developed by B. Braun to help infection control practitioners monitor compliance according to the WHO "My 5 Moments of Hand Hygiene". This tool simplifies and standardizes the whole process from data collection to reports generation, reducing manpower and enhancing productivity.
@@ -86,5 +86,6 @@
     <allow-navigation href="http://172.16.10.238:8100" />
     <allow-navigation href="http://172.16.10.232:8100" />
     <allow-navigation href="http://192.168.1.5:undefined" />
+    <allow-navigation href="http://192.168.1.102:8100" />
     <engine name="android" spec="^6.2.3" />
 </widget>

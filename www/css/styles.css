@@ -1565,3 +1565,10 @@ ion-header-bar h1 {
 .activeNotes {
 	color: white !important;
 }
+
+
+
+.smallFonts {
+	font-size: 8px !important;
+	line-height:25px;
+}

@@ -25,6 +25,14 @@ angular.module('observe.ctrl', ['ionic'])
 	}
 	
 	
+
+	//language check - record frontend button classes
+	if($localStorage.languageSelected === "in") {
+		$scope.smallFonts = true;
+	}
+	else {
+		$scope.smallFonts = false;
+	}
 	
 	$ionicModal.fromTemplateUrl('templates/observation-summary.html', {
 		scope: $scope,

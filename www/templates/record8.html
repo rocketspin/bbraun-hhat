@@ -49,16 +49,17 @@
         <div class="moment-actions">
             <div class="moment-buttons">
                 <div class="moment-button-five">
-                    <button class="button circle button-balanced" 		ng-click="multimoment.compliance = 'rub'" 		ng-class="{'active':multimoment.compliance == 'rub'}">{{ 'AE9' | translate }}</button>
+                    <button class="button circle button-balanced" ng-click="multimoment.compliance = 'rub'" 		ng-class="{'active':multimoment.compliance == 'rub', smallFonts: smallFonts}">{{ 'AE9' | translate }}</button>
                 </div>
                 <div class="moment-button-five">
-                    <button class="button circle button-balanced" 		ng-click="multimoment.compliance = 'wash'" 		ng-class="{'active':multimoment.compliance == 'wash'}">{{ 'AE10' | translate }}</button>
+                    <button class="button circle button-balanced" ng-click="multimoment.compliance = 'wash'" ng-class="{'active':multimoment.compliance == 'wash', smallFonts: smallFonts}">{{ 'AE10' | translate }}</button>
                 </div>
                 <div class="moment-button-five">
-                    <button class="button red circle button-balanced" 	ng-click="multimoment.compliance = 'missed'" 	ng-class="{'active':multimoment.compliance == 'missed'}">{{ 'AE11' | translate }}</button>
+                    <button class="button red circle button-balanced" ng-click="multimoment.compliance = 'missed'" ng-class="{'active':multimoment.compliance == 'missed', smallFonts: smallFonts}">{{ 'AE11' | translate }}</button>
                 </div>
                 <div class="moment-button-five">
-                    <button class="button button-balanced" ng-click="multimoment.gloves = multimoment.gloves == 'YES' ? 'NO' : 'YES'" ng-class="{ 'active':multimoment.gloves == 'YES'}">{{ 'AE12' | translate }}</button>
+                    <a class="button button-balanced" ng-click="multimoment.gloves = multimoment.gloves == 'YES' ? 'NO' : 'YES'" ng-class="{ 'active':multimoment.gloves == 'YES', smallFonts: smallFonts}">{{ 'AE12' | translate }}</a>
+                    <!-- <button class="button button-balanced" ng-click="multimoment.gloves = multimoment.gloves == 'YES' ? 'NO' : 'YES'" ng-class="{ 'active':multimoment.gloves == 'YES', smallFonts: smallFonts}"><span>{{ 'AE12' | translate }}</span></button> -->
                 </div>
                 <div class="moment-button-five">
                     <button class="button button-balanced icon ion-plus-round" ng-click="showAdditionalInfo()" ng-class="{'active':multimoment.exposure || multimoment.gloves == 'YES' || multimoment.gown == 'YES'  || multimoment.mask == 'YES'}"></button>
@@ -69,13 +70,19 @@
     
     <ion-footer-bar class="button-footer" style="background:#00B482; width:100%;">
         <div class="button-bar" style="margin: 0 1%;">
-            <a class="button icon button-dark " ng-click="moveLocation();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'ADD28' | translate }} <i class="ion-android-arrow-back"></i></a>
+            <a class="button icon button-dark " ng-click="moveLocation();" style="border-radius: 22px; background:#027556; border-color:#027556;">
+                <span style="font-size:small;">{{ 'ADD28' | translate }} <i class="ion-android-arrow-back"></i></span>
+            </a>
         </div>
         <div class="button-bar" style="margin: 0 1%;">
-            <a class="button icon button-dark " ng-click="stopObserving();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'ADD29' | translate }} <i class="ion-android-close"></i></a>
+            <a class="button icon button-dark " ng-click="stopObserving();" style="border-radius: 22px; background:#027556; border-color:#027556;">
+                <span style="font-size:small;">{{ 'ADD29' | translate }} <i class="ion-android-close"></i></span>
+            </a>
         </div>
         <div class="button-bar" style="margin: 0 1%;">
-            <a class="button icon button-dark " ng-click="multiObserveSend();" style="border-radius: 22px; background:#027556; border-color:#027556;">{{ 'AE13' | translate }} <i class="ion-android-arrow-forward"></i></a>
+            <a class="button icon button-dark " ng-click="multiObserveSend();" style="border-radius: 22px; background:#027556; border-color:#027556;">
+                <span style="font-size:small;">{{ 'AE13' | translate }} <i class="ion-android-arrow-forward"></i></span>
+            </a>
         </div>
     </ion-footer-bar>
 </ion-view>
