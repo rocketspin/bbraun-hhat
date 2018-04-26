@@ -1,0 +1,8 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://rgwenceslao@bitbucket.org/bbmag/hand-hygiene-auditing-ios-app.git
